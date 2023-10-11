@@ -183,3 +183,9 @@ Started GET "/movies" for 127.0.0.1 at 2023-10-11 14:43:44 -0500
 ActionController::RoutingError (No route matches [GET] "/movies"):
 
 ```
+
+Ejecuta el comando bin/rails routes en lugar de utilizar rake routes(debido a que me sale error).
+
+![Captura de pantalla de 2023-10-11 15-12-04](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/d95d8b84-7c96-4757-ad97-857482799647)
+
+
