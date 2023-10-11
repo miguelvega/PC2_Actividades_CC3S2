@@ -74,7 +74,7 @@ arbol.each { |elemento| puts elemento }
 
 ```
 En un inicio cuando queremos crear una instancia de la clase `ArbolBinario`, el argumento sera la raiz del arbol como se puede
-apreciar en el construvtor de dicha clase.<br>
+apreciar en el constructor de dicha clase.<br>
 El metodo `insertar_elemento` que permite insertar un elemento en el árbol binario, para ello compara `elemento` con `valor` para determinar si debe insertarse en el subárbol izquierdo (izq) o en el subárbol derecho (der) del nodo actual.<br>
 El metodo `empty?` verifica si el árbol está vacío. El árbol se considera vacío si ambos 
 subárboles, izquierdo y derecho, son nil.<br>
