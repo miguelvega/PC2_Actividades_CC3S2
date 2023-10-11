@@ -201,3 +201,9 @@ Ahora la aplicación esta funcionando, aunque el estilo no parezca demasiado atr
 
 
 ![Captura de pantalla de 2023-10-11 16-18-47](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/3328448d-0cee-4e5e-bf64-8bf038b8dc1c)
+
+
+Sin embargo , al desplegar la aplicación en los servidores de Heroku tuve algunos problemas apareciendo los iguiente: `error: falló el empuje de algunas referencias a 'https://git.heroku.com/calm-basin-74229.git'
+`
+
+
