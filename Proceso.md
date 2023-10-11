@@ -116,10 +116,13 @@ Al ejecutar el comando de la siguiente imagen Rails buscará en el directorio db
 
 ![Captura de pantalla de 2023-10-11 12-08-21](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/9e72bada-9869-4b65-a078-2665da779014)
 
+Luego, que la migración se realizó correctamente, actualiza el esquema de la base de datos de prueba ejecutando `rake db:test:prepare`
 
-![Captura de pantalla de 2023-10-11 12-09-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/905f8b7e-17cf-4d1e-b767-f3e569ff647e)
+Ten en cuenta que esta tarea de limpieza también almacena el número de migración en la base de datos y, de forma predeterminada, solo aplica las migraciones que aún no se han aplicado. Verificamos que no haga nada la segunda vez
 
 ![Captura de pantalla de 2023-10-11 12-09-24](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/6b17bc67-9f27-491c-a043-4da472364c88)
+
+
 
 ```
 class Movie < ActiveRecord::Base
