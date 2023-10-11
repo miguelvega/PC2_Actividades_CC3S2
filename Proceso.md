@@ -194,3 +194,6 @@ Si ahora recargamos la página en nuestro navegador, deberíamos ver un error di
 Rails esencialmente se queja de que no puede encontrar la clase MoviesController, pero el hecho de que incluso esté buscando esa clase nos dice que nuestra ruta está funcionando correctamente. Como antes, este mensaje de error e información adicional se capturan en el archivo de registro log/development.log
 
 ![Captura de pantalla de 2023-10-11 15-24-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/14560b0d-6586-4ddf-96d6-2f3de172f15f)
+
+
+![Captura de pantalla de 2023-10-11 16-18-47](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/3328448d-0cee-4e5e-bf64-8bf038b8dc1c)
