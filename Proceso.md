@@ -190,4 +190,7 @@ Ejecuta el comando bin/rails routes en lugar de utilizar rake routes(debido a qu
 
 Observamos que debido a nuestro cambio en `routes.rb`, la primera línea de salida dice que el URI GET /movies intentará llamar a la acción index de MoviesController. Esta y la mayoría de las otras rutas en la tabla son el resultado de la línea de recursos :movies.
 
+Si ahora recargamos la página en nuestro navegador, deberíamos ver un error diferente: MoviesController constante no inicializada.<br>
+Rails esencialmente se queja de que no puede encontrar la clase MoviesController, pero el hecho de que incluso esté buscando esa clase nos dice que nuestra ruta está funcionando correctamente. Como antes, este mensaje de error e información adicional se capturan en el archivo de registro log/development.log
+
 ![Captura de pantalla de 2023-10-11 15-24-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/14560b0d-6586-4ddf-96d6-2f3de172f15f)
