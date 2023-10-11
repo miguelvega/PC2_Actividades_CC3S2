@@ -1,13 +1,13 @@
 # Parte 1  Algoritmos, Programación Orientada a Objetos
 
-Escribe una función que acepte una cadena que contenga todas las letras del alfabeto excepto una y devuelva la letra que falta. Por ejemplo, la cadena the quick brown box jumps over a lazy dog contiene todas las letras del alfabeto excepto la letra f. La función debe tener una complejidad temporal de O(n).
+## Escribe una función que acepte una cadena que contenga todas las letras del alfabeto excepto una y devuelva la letra que falta. Por ejemplo, la cadena the quick brown box jumps over a lazy dog contiene todas las letras del alfabeto excepto la letra f. La función debe tener una complejidad temporal de O(n).
 
 ```
 def letra_faltante(cadena)
     cadena = cadena.downcase # Primero pasamos la cadena a minusculas
     abecedario = ('a'..'z').to_a #Transformamos a un arreglo
     cadena.each_char do |letra|
-    abecedario.delete(letra) if abecedario.include?(letra) #Borraremos las letras que estan en el abecedario que estan contenidas en la cadena
+    abecedario.delete(letra) if abecedario.include?(letra) #Borraremos las letras que coindicen con el abecedario y que estan contenidas en la cadena
     end
     abecedario[0]# Con lo cual solo nos quedaria una unica letra dentro del abecedario
 end
@@ -17,7 +17,68 @@ letraFaltante = letra_faltante(cadena)
 "La letra que falta es: #{letraFaltante}"
 
 ```
-Puede visualizar la ejecucion y los comentarios asociados al archivo `PC2_Parte1_MIguelVega.ipynb` ubicado en este repositorio, con el fin de explicar la funcion de cada linea de codigo.
+Al ser un codigo pequeño la explicacion lo escribi como comentario al final de cada linea de codigo.
+Puede visualizar la ejecucion y los comentarios asociados al archivo `PC2_Parte1_MIguelVega.ipynb` ubicado en este repositorio.
+
+## Un árbol binario ordenado es aquel en el que cada nodo tiene un valor y hasta 2 hijos, cada uno de los cuales es también un árbol binario ordenado, y el valor de cualquier elemento del subárbol izquierdo de un nodo es menor que el valor de cualquier elemento en el subárbol derecho del nodo. Defina una clase colección llamada BinaryTree que ofrezca los métodos de instancia << (insertar elemento), empty? (devuelve cierto si el árbol no tiene elementos) y each (el iterador estándar que devuelve un elemento cada vez, en el orden que tú quieras). 
+
+```
+class ArbolBinario 
+  attr_accessor :valor, :izq, :der
+
+  def initialize(value)
+    @valor = value # En un inicio este seria nuestro nodo raiz
+    @izq = nil
+    @der = nil
+  end
+
+  def insertar_elemento(elemento)
+    if elemento <= @valor
+       if @izq.nil?
+        @izq = ArbolBinario.new(elemento)
+       else
+        @izq.insertar_elemento(elemento)
+       end
+   else
+      if @der.nil?
+       @der = ArbolBinario.new(elemento)
+      else
+       @der.insertar_elemento(elemento)
+   end
+  end
+
+  end
+
+  def empty?
+    @izq.nil? && @der.nil?
+  end
+
+  def each(&block)
+    @izq.each(&block) if @izq
+    block.call(@valor)
+    @der.each(&block) if @der
+  end
+end
+
+arbol = ArbolBinario.new(6)
+arbol.insertar_elemento(4)
+arbol.insertar_elemento(7)
+arbol.insertar_elemento(5)
+arbol.insertar_elemento(2)
+
+puts "El arbol esta vacio? #{arbol.empty?}"
+
+puts "Elementos en el arbol:"
+arbol.each { |elemento| puts elemento }
+
+```
+En un inicio cuando queremos crear una instancia de la clase ArbolBinario, el argumento sera la raiz del arbol como se puede
+apreciar en el construvtor de dicha clase.
+método llamado insertar_elemento` que permite insertar un elemento en el árbol binario, para ello compara `elemento` con `valor` para determinar si debe insertarse en el subárbol izquierdo (izq) o en el subárbol derecho (der) del nodo actual
+El metodo `empty?` verifica si el árbol está vacío. El árbol se considera vacío si ambos 
+subárboles, izquierdo y derecho, son nil.
+
+
 
 
 # Parte 3 Rail
