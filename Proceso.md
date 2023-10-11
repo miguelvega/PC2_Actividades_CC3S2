@@ -91,7 +91,7 @@ Luego, nos dirigimos a nuestro navegador, colocamos `http://localhost:3000`, con
 
 Rails define tres entornos (production, development y test), cada uno de los cuales gestiona tu propia base de datos independiente. Rails almacena estos entornos y los medios para conectarse a la base de datos asociada con cada uno de ellos en config/database.yml
 
-
+Generamos una nueva migración llamada `create_movies` al ejecutar el comando `rails generate migration create_movies`. Vemos en la salida que se crea un nuevo archivo de migración llamado `20231011165747_create_movies.rb`. Este esquema de nombres permite a Rails aplicar las migraciones en el orden en que fueron creadas, ya que los nombres de los archivos se ordenarán por fecha.
 
 
 ![Captura de pantalla de 2023-10-11 12-05-36](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1de54ab7-c244-4d9d-9616-4bb27166712a)
