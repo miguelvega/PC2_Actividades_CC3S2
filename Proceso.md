@@ -188,4 +188,4 @@ Ejecuta el comando bin/rails routes en lugar de utilizar rake routes(debido a qu
 
 ![Captura de pantalla de 2023-10-11 15-12-04](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/d95d8b84-7c96-4757-ad97-857482799647)
 
-
+Observamos que debido a nuestro cambio en `routes.rb`, la primera línea de salida dice que el URI GET /movies intentará llamar a la acción index de MoviesController. Esta y la mayoría de las otras rutas en la tabla son el resultado de la línea de recursos :movie.
