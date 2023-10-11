@@ -168,3 +168,18 @@ Colocamos `http://localhost:3000/movies`, notamos que Rails se quejará de que l
 
 ![Captura de pantalla de 2023-10-11 14-45-43](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/4d312402-f9f7-4713-bfe4-d7e1e8920943)
 
+Utiliza un editor para abrir el archivo `log/development.log` y observamos que el mensaje de error se registra allí. Cuando algo sale mal busca información detallada sobre el error.
+```
+Started GET "/turtle" for 127.0.0.1 at 2023-10-11 14:43:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/turtle"):
+  
+Started GET "/foobar" for 127.0.0.1 at 2023-10-11 14:43:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/foobar"):
+  
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 14:43:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+
+```
