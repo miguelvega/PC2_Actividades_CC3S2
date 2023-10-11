@@ -68,6 +68,8 @@ end
 
 ![Captura de pantalla de 2023-10-11 12-25-17](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1f458fd2-2dd6-430e-a1e1-2d33fea8894a)
 
+Sembramos la base de datos (es decir, agregar datos iniciales) con algunas películas para hacer que el resto de la actividad sea más interesante. Para ellos copiamos el siguiente codigo en `db/seeds.rb` y ejecutamos rake db:seed.
+
 ```
 # Seed the RottenPotatoes DB with some movies.
 
@@ -91,5 +93,6 @@ more_movies = [
 
 ] 
 ```
-
+Ejecutamos nuevamente el comando `Rails comsole` y realizamos algunas consultas para ver el contenido de la base de datos.
+Con lo cual se puede apreciar los registros añadidos previamente en la base de datos y para ello hemos usado en primera instancia `Movie.first`para verificar si tenemos datos en la base de datos y para inspeccionar la primera entrada para asegurarnos de que se crearon correctamente. Tambien, hemos usado `Movie.all` para mostrar la lista de todas las películas en la base de datos.`
 ![Captura de pantalla de 2023-10-11 12-35-20](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/15df3a6f-6cb5-416e-941f-42c770b67c75)
