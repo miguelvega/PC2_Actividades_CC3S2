@@ -96,6 +96,7 @@ Generamos una nueva migración llamada `create_movies` al ejecutar el comando `r
 
 ![Captura de pantalla de 2023-10-11 12-05-36](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1de54ab7-c244-4d9d-9616-4bb27166712a)
 
+Abrimos el archivo `20231011165747_create_movies.rb` y pegamos el código siguiente y lo guardamos.
 ```
 class CreateMovies < ActiveRecord::Migration[6.1]
   def change
@@ -111,9 +112,10 @@ class CreateMovies < ActiveRecord::Migration[6.1]
 end
 
 ```
-
+Al ejecutar el comando de la siguiente imagen Rails buscará en el directorio db/migrate y aplicará todas las migraciones que aún no se han aplicado a la base de datos.
 
 ![Captura de pantalla de 2023-10-11 12-08-21](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/9e72bada-9869-4b65-a078-2665da779014)
+
 
 ![Captura de pantalla de 2023-10-11 12-09-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/905f8b7e-17cf-4d1e-b767-f3e569ff647e)
 
