@@ -17,7 +17,7 @@ letraFaltante = letra_faltante(cadena)
 "La letra que falta es: #{letraFaltante}"
 
 ```
-Puede visualizar la ejecucion y los comentarios asiaciados explicando la funcion de cada linea en el archico con extension .ipynb en esgte repositorio.
+Puede visualizar la ejecucion y los comentarios asociados al archivo `PC2_Parte1_MIguelVega.ipynb` ubicado en este repositorio, con el fin de explicar la funcion de cada linea de codigo.
 
 
 # Parte 3 Rail
@@ -27,3 +27,33 @@ Relizamos la configuraciones pertinentes(tuve algunas problemas) en nuestro disp
 Luego, nos dirigimos a nuestro navegador, colocamos `http://localhost:3000`, con lo cual deberiamos ver la página de inicio genérica de Ruby on 
 Rails, que en realidad es proporcionada por tu aplicación
 ![Captura de pantalla de 2023-10-11 09-27-56](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/eb8e4da2-84f0-4101-8208-6da643d27a08)
+
+Rails define tres entornos (production, development y test), cada uno de los cuales gestiona tu propia base de datos independiente. Rails almacena estos entornos y los medios para conectarse a la base de datos asociada con cada uno de ellos en config/database.yml
+
+
+
+
+![Captura de pantalla de 2023-10-11 12-05-36](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1de54ab7-c244-4d9d-9616-4bb27166712a)
+
+```
+class CreateMovies < ActiveRecord::Migration[6.1]
+  def change
+    create_table 'movies' do |t|
+      t.string 'title'
+      t.string 'rating'
+      t.text 'description'
+      t.datetime 'release_date'
+
+      t.timestamps
+    end
+  end
+end
+
+```
+
+
+![Captura de pantalla de 2023-10-11 12-08-21](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/9e72bada-9869-4b65-a078-2665da779014)
+
+![Captura de pantalla de 2023-10-11 12-09-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/905f8b7e-17cf-4d1e-b767-f3e569ff647e)
+
+![Captura de pantalla de 2023-10-11 12-09-24](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/6b17bc67-9f27-491c-a043-4da472364c88)
