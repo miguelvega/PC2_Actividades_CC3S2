@@ -57,3 +57,39 @@ end
 ![Captura de pantalla de 2023-10-11 12-09-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/905f8b7e-17cf-4d1e-b767-f3e569ff647e)
 
 ![Captura de pantalla de 2023-10-11 12-09-24](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/6b17bc67-9f27-491c-a043-4da472364c88)
+
+```
+class Movie < ActiveRecord::Base
+
+end
+
+```
+
+
+![Captura de pantalla de 2023-10-11 12-25-17](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1f458fd2-2dd6-430e-a1e1-2d33fea8894a)
+
+```
+# Seed the RottenPotatoes DB with some movies.
+
+more_movies = [
+
+{:title => 'Ganibal', :rating => 'G',
+
+:release_date => '25-Nov-1992'},
+
+{:title => 'Fuerza bruta', :rating => 'R',
+
+:release_date => '21-Jul-1989'},
+
+{:title => 'The Ring', :rating => 'PG-13',
+
+:release_date => '10-Aug-2011'},
+
+{:title => 'Alien: The Return ', :rating => 'PG',
+
+:release_date => '12-Jun-1981'}
+
+] 
+```
+
+![Captura de pantalla de 2023-10-11 12-35-20](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/15df3a6f-6cb5-416e-941f-42c770b67c75)
