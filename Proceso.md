@@ -74,7 +74,7 @@ arbol.each { |elemento| puts elemento }
 
 ```
 En un inicio cuando queremos crear una instancia de la clase `ArbolBinario`, el argumento sera la raiz del arbol como se puede
-apreciar en el construvtor de dicha clase.<br>
+apreciar en el constructor de dicha clase.<br>
 El metodo `insertar_elemento` que permite insertar un elemento en el árbol binario, para ello compara `elemento` con `valor` para determinar si debe insertarse en el subárbol izquierdo (izq) o en el subárbol derecho (der) del nodo actual.<br>
 El metodo `empty?` verifica si el árbol está vacío. El árbol se considera vacío si ambos 
 subárboles, izquierdo y derecho, son nil.<br>
@@ -83,20 +83,20 @@ EL metodo `in_oder` basicamente ordena el arbol de la siguiente manera : izquier
 
 
 # Parte 3 Rail
-Relizamos la configuraciones pertinentes(tuve algunas problemas) en nuestro dispositivo y para asegurarse de que todo funcione, ejecutamos la aplicación localmente.
+Relizamos la configuraciones pertinentes(tuve algunos problemas) en nuestro dispositivo y para asegurarse de que todo funcione, ejecutamos la aplicación localmente.
 ![Captura de pantalla de 2023-10-11 09-27-44](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/34e4aa48-a9dc-4783-9327-a99e2384516f)
 
-Luego, nos dirigimos a nuestro navegador, colocamos `http://localhost:3000`, con lo cual deberiamos ver la página de inicio genérica de Ruby on 
-Rails, que en realidad es proporcionada por tu aplicación
+Luego, nos dirigimos a nuestro navegador, colocamos `http://localhost:3000`, con lo cual deberiamos ver la página de inicio genérica de Ruby on Rails, que en realidad es proporcionada por tu aplicación
 ![Captura de pantalla de 2023-10-11 09-27-56](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/eb8e4da2-84f0-4101-8208-6da643d27a08)
 
 Rails define tres entornos (production, development y test), cada uno de los cuales gestiona tu propia base de datos independiente. Rails almacena estos entornos y los medios para conectarse a la base de datos asociada con cada uno de ellos en config/database.yml
 
-
+Generamos una nueva migración llamada `create_movies` al ejecutar el comando `rails generate migration create_movies`. Vemos en la salida que se crea un nuevo archivo de migración llamado `20231011165747_create_movies.rb`. Este esquema de nombres permite a Rails aplicar las migraciones en el orden en que fueron creadas, ya que los nombres de los archivos se ordenarán por fecha.
 
 
 ![Captura de pantalla de 2023-10-11 12-05-36](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/1de54ab7-c244-4d9d-9616-4bb27166712a)
 
+Abrimos el archivo `20231011165747_create_movies.rb` y pegamos el código siguiente y lo guardamos.
 ```
 class CreateMovies < ActiveRecord::Migration[6.1]
   def change
@@ -112,13 +112,17 @@ class CreateMovies < ActiveRecord::Migration[6.1]
 end
 
 ```
-
+Al ejecutar el comando de la siguiente imagen Rails buscará en el directorio db/migrate y aplicará todas las migraciones que aún no se han aplicado a la base de datos.
 
 ![Captura de pantalla de 2023-10-11 12-08-21](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/9e72bada-9869-4b65-a078-2665da779014)
 
-![Captura de pantalla de 2023-10-11 12-09-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/905f8b7e-17cf-4d1e-b767-f3e569ff647e)
+Luego, que la migración se realizó correctamente, actualiza el esquema de la base de datos de prueba ejecutando `rake db:test:prepare`
+
+Ten en cuenta que esta tarea de limpieza también almacena el número de migración en la base de datos y, de forma predeterminada, solo aplica las migraciones que aún no se han aplicado. Verificamos que no haga nada la segunda vez
 
 ![Captura de pantalla de 2023-10-11 12-09-24](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/6b17bc67-9f27-491c-a043-4da472364c88)
+
+
 
 ```
 class Movie < ActiveRecord::Base
@@ -156,5 +160,37 @@ more_movies = [
 ] 
 ```
 Ejecutamos nuevamente el comando `Rails comsole` y realizamos algunas consultas para ver el contenido de la base de datos.
-Con lo cual se puede apreciar los registros añadidos previamente en la base de datos y para ello hemos usado en primera instancia `Movie.first`para verificar si tenemos datos en la base de datos y para inspeccionar la primera entrada para asegurarnos de que se crearon correctamente. Tambien, hemos usado `Movie.all` para mostrar la lista de todas las películas en la base de datos.`
+Con lo cual se puede apreciar los registros añadidos previamente, para ello hemos usado en primera instancia `Movie.first`para verificar si tenemos datos en la base de datos y para inspeccionar la primera entrada para asegurarnos de que se crearon correctamente. Tambien, hemos usado `Movie.all` para mostrar la lista de todas las películas en la base de datos.`
 ![Captura de pantalla de 2023-10-11 12-35-20](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/15df3a6f-6cb5-416e-941f-42c770b67c75)
+
+ejecutamos la aplicación nuevamente `bin/rails server` y nos dirigimos a nuestro navegador.
+Colocamos `http://localhost:3000/movies`, notamos que Rails se quejará de que la URI no coincide con ninguna ruta, esto ocurre porque no hemos especificado ninguna ruta que asigne URI a métodos de aplicación. Comprueba que nos informa que no hay rutas en nuestra nueva aplicación.
+
+![Captura de pantalla de 2023-10-11 14-45-43](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/4d312402-f9f7-4713-bfe4-d7e1e8920943)
+
+Utilizamos un editor para abrir el archivo `log/development.log` y observamos que el mensaje de error se registra allí. Se puede apreciar dichos mensaje en la siguiente imagen.
+```
+Started GET "/turtle" for 127.0.0.1 at 2023-10-11 14:43:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/turtle"):
+  
+Started GET "/foobar" for 127.0.0.1 at 2023-10-11 14:43:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/foobar"):
+  
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 14:43:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+
+```
+
+Ejecuta el comando bin/rails routes en lugar de utilizar rake routes(debido a que me sale error). Con lo cual nos debería mostrar las rutas disponibles en nuestra aplicación.
+
+![Captura de pantalla de 2023-10-11 15-12-04](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/d95d8b84-7c96-4757-ad97-857482799647)
+
+Observamos que debido a nuestro cambio en `routes.rb`, la primera línea de salida dice que el URI GET /movies intentará llamar a la acción index de MoviesController. Esta y la mayoría de las otras rutas en la tabla son el resultado de la línea de recursos :movies.
+
+Si ahora recargamos la página en nuestro navegador, deberíamos ver un error diferente: MoviesController constante no inicializada.<br>
+Rails esencialmente se queja de que no puede encontrar la clase MoviesController, pero el hecho de que incluso esté buscando esa clase nos dice que nuestra ruta está funcionando correctamente. Como antes, este mensaje de error e información adicional se capturan en el archivo de registro log/development.log
+
+![Captura de pantalla de 2023-10-11 15-24-16](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/14560b0d-6586-4ddf-96d6-2f3de172f15f)
