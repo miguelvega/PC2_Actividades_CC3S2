@@ -162,3 +162,9 @@ more_movies = [
 Ejecutamos nuevamente el comando `Rails comsole` y realizamos algunas consultas para ver el contenido de la base de datos.
 Con lo cual se puede apreciar los registros añadidos previamente, para ello hemos usado en primera instancia `Movie.first`para verificar si tenemos datos en la base de datos y para inspeccionar la primera entrada para asegurarnos de que se crearon correctamente. Tambien, hemos usado `Movie.all` para mostrar la lista de todas las películas en la base de datos.`
 ![Captura de pantalla de 2023-10-11 12-35-20](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/15df3a6f-6cb5-416e-941f-42c770b67c75)
+
+ejecutamos la aplicación nuevamente `bin/rails server` y nos dirigimos a nuestro navegador.
+Colocamos `http://localhost:3000/movies`, notamos que Rails se quejará de que la URI no coincide con ninguna ruta, esto ocurre porque no hemos especificado ninguna ruta que asigne URI a métodos de aplicación. Comprueba que nos informa que no hay rutas en nuestra nueva aplicación.
+
+![Captura de pantalla de 2023-10-11 14-45-43](https://github.com/miguelvega/PC2_Actividades_CC3S2/assets/124398378/4d312402-f9f7-4713-bfe4-d7e1e8920943)
+
